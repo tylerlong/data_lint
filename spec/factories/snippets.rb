@@ -3,6 +3,5 @@
 FactoryGirl.define do
   factory :snippet do
     content "MyText"
-    valid false
   end
 end

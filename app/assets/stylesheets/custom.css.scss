@@ -18,3 +18,7 @@ body { padding-top: 60px; }
   background: $errorBackground;
   color: $errorText;
 }
+
+textarea {
+  width: 600px;
+}

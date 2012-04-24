@@ -4,6 +4,8 @@ RailsSetup::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/back', to: 'static_pages#back'
 
+  resources :snippets
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

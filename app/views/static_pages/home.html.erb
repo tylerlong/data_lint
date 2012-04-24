@@ -1,2 +1,19 @@
 <% provide(:title, 'Online YAML validator') %>
 <% provide(:h1, 'Online YAML validator') %>
+
+<div class="row">
+  <div class="offset1 span10">
+    <%= form_for(@snippet) do |f| %>
+    <%= f.text_area :content, cols: 20 %>
+    <%= f.submit "Validate", :class => "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<h2>Result</h2>
+<div class="row">
+  <div class="offset1 span10">
+    <%= @result.class %><br/>
+    <%= @result %>
+  </div>
+</div>
