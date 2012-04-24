@@ -1,5 +1,5 @@
 common: &common
-  site_name: 'Rails Setup'
+  site_name: 'YAML Lint'
 
 development:
   <<: *common
