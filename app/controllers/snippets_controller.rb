@@ -1,4 +1,4 @@
-require 'pp'
+require 'json'
 
 class SnippetsController < ApplicationController
 
@@ -12,7 +12,7 @@ class SnippetsController < ApplicationController
     rescue => ex
       flash.now[:error] = ex.message
     else
-      @result = PP.pp(@result, "")
+      @result = JSON.pretty_generate(@result)
       flash.now[:success] = 'the YAML data is valid.'
     end
     render 'static_pages/home'
