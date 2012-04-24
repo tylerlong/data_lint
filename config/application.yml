@@ -1,5 +1,5 @@
 common: &common
-  site_name: 'YAML Lint'
+  site_name: 'Data Lint'
 
 development:
   <<: *common

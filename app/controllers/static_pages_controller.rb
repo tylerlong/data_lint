@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @snippet = Snippet.new
+    @snippet = @snippet1 = @snippet2 = Snippet.new
   end
 
 end

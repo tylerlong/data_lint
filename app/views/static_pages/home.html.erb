@@ -1,18 +1,33 @@
-<% provide(:title, 'Online YAML validator') %>
-<% provide(:h1, 'Online YAML validator') %>
+<% provide(:title, 'Online Data validator') %>
 
+<h2>YAML data:</h2><br/>
+<% if @snippet.format == 'yaml' %>
+<% flash.each do |key, value| %>
+<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+<% end %>
+<% end %>
 <div class="row">
   <div class="offset1 span10">
-    <%= form_for(@snippet) do |f| %>
+    <%= form_for(@snippet1) do |f| %>
     <%= f.text_area :content %>
+    <%= f.hidden_field :format, value: 'yaml' %>
     <br/><%= f.submit "Validate", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>
 
-<h2>Result in JSON format:</h2><br/>
+<h2>JSON data:</h2><br/>
+<% if @snippet.format == 'json' %>
+<% flash.each do |key, value| %>
+<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+<% end %>
+<% end %>
 <div class="row">
   <div class="offset1 span10">
-    <pre><%= @result %></pre>
+    <%= form_for(@snippet2) do |f| %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :format, value: 'json' %>
+    <br/><%= f.submit "Validate", class: "btn btn-large btn-primary" %>
+    <% end %>
   </div>
 </div>
