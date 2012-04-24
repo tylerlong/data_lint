@@ -4,6 +4,9 @@ class SnippetsController < ApplicationController
 
   def create
     @snippet = Snippet.new(params[:snippet])
+
+    return render 'static_pages/home' unless @snippet.valid?
+
     begin
       @result = YAML.load(@snippet.content)
     rescue => ex
