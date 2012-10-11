@@ -8,11 +8,11 @@
 <% end %>
 <div class="row">
   <div class="offset1 span10">
-    <%= form_for(@snippet1) do |f| %>
-    <%= f.text_area :content %>
-    <%= f.hidden_field :format, value: 'yaml' %>
-    <br/><%= f.submit "Validate", class: "btn btn-large btn-primary" %>
-    <% end %>
+    <form action="/", method="post">
+      <input name="data_format", type="hidden" value="yaml"/>
+      <textarea name="data_content"><%= @snippet1.content %></textarea>
+      <input type="submit"/>
+    </form>
   </div>
 </div>
 
@@ -24,10 +24,10 @@
 <% end %>
 <div class="row">
   <div class="offset1 span10">
-    <%= form_for(@snippet2) do |f| %>
-    <%= f.text_area :content %>
-    <%= f.hidden_field :format, value: 'json' %>
-    <br/><%= f.submit "Validate", class: "btn btn-large btn-primary" %>
-    <% end %>
+    <form action="/", method="post">
+      <input name="data_format", type="hidden" value="json"/>
+      <textarea name="data_content"><%= @snippet2.content %></textarea>
+      <input type="submit"/>
+    </form>
   </div>
 </div>
