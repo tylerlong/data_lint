@@ -1,6 +1,3 @@
-class Snippet < ActiveRecord::Base
-  attr_accessible :content, :format
-
-  validates :content, presence: true
-  validates :format, presence: true, format: { with: /(?:yaml|json)/ }
+class Snippet
+  attr_accessor :content, :format
 end
